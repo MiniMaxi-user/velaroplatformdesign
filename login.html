@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inloggen — Velaro</title>
+<link rel="stylesheet" href="src/styles/index.css">
+</head>
+<body>
+
+<div class="auth-layout">
+
+  <!-- Subtle dot pattern -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.035;pointer-events:none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="1" fill="#1A2B4A"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dots)"/>
+  </svg>
+
+  <div class="auth-card">
+
+    <div class="auth-logo">
+      <img src="velaro_logo_black.png" alt="Velaro">
+    </div>
+
+    <div style="text-align:center;margin-bottom:24px;">
+      <span class="badge badge-gold" style="font-size:11px;letter-spacing:1px;">Exclusief Platform · Besloten Toegang</span>
+    </div>
+
+    <h1 class="auth-heading">Welkom <em>terug</em></h1>
+    <p class="auth-sub">Log in op uw Velaro-account</p>
+
+    <form id="login-form" novalidate>
+
+      <div class="form-group" style="margin-bottom:14px;">
+        <label class="form-label" for="email">E-mailadres</label>
+        <div class="input-group">
+          <span class="input-group-icon">✉</span>
+          <input class="input" id="email" type="email" placeholder="uw@email.nl" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:8px;">
+        <label class="form-label" for="password">Wachtwoord</label>
+        <div class="input-group">
+          <span class="input-group-icon">🔒</span>
+          <input class="input" id="password" type="password" placeholder="••••••••" autocomplete="current-password" required>
+          <span class="input-group-suffix" id="togglePw" style="cursor:pointer;pointer-events:all;" title="Toon/verberg wachtwoord">👁</span>
+        </div>
+      </div>
+
+      <div class="form-row-inline" style="margin-bottom:22px;">
+        <label class="check-item" style="font-size:13px;color:var(--muted);">
+          <input type="checkbox"> Onthoud mij
+        </label>
+        <a href="#" class="form-link">Wachtwoord vergeten?</a>
+      </div>
+
+      <button type="submit" class="btn-primary btn-primary--full" style="padding:12px 20px;font-size:14px;justify-content:center;">
+        Inloggen
+      </button>
+
+    </form>
+
+    <div class="auth-divider">of</div>
+
+    <button type="button" class="btn-secondary btn-primary--full" style="padding:11px 20px;font-size:13px;justify-content:center;gap:8px;">
+      <span>🔑</span> Inloggen via SSO
+    </button>
+
+    <div class="auth-footer">
+      Nog geen account? <a href="#">Toegang aanvragen</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('togglePw').addEventListener('click', () => {
+    const inp = document.getElementById('password');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+  });
+
+  document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Inloggen…';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Inloggen';
+      btn.style.opacity = '';
+      btn.disabled = false;
+    }, 1500);
+  });
+</script>
+</body>
+</html>

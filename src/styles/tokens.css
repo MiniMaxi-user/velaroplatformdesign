@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* ── COLOURS ── */
+  --velaro-color-bg:              #F5F3EE;
+  --velaro-color-surf-1:          #FFFFFF;
+  --velaro-color-surf-2:          #EEEAE2;
+  --velaro-color-surf-3:          #E6E1D6;
+  --velaro-color-navy:            #1A2B4A;
+  --velaro-color-navy-2:          #2C3E62;
+  --velaro-color-navy-3:          #3D5278;
+  --velaro-color-gold:            #D8BD71;
+  --velaro-color-gold-2:          #BEA256;
+  --velaro-color-amber:           #F2AD75;
+  --velaro-color-white:           #FFFFFF;
+  --velaro-color-text:            #1A2B4A;
+  --velaro-color-muted:           #6B7280;
+  --velaro-color-muted-2:         #9CA3AF;
+  --velaro-color-success:         #16A34A;
+  --velaro-color-success-bg:      #F0FDF4;
+  --velaro-color-success-border:  #BBF7D0;
+  --velaro-color-danger:          #DC2626;
+  --velaro-color-danger-bg:       #FEF2F2;
+  --velaro-color-danger-border:   #FECACA;
+  --velaro-color-warning:         #B45309;
+  --velaro-color-warning-bg:      #FFFBEB;
+  --velaro-color-warning-border:  #FDE68A;
+  --velaro-color-info:            #1D4ED8;
+  --velaro-color-info-bg:         #EFF6FF;
+  --velaro-color-info-border:     #BFDBFE;
+  --velaro-color-border:          rgba(26, 43, 74, 0.10);
+  --velaro-color-border-strong:   rgba(26, 43, 74, 0.22);
+  --velaro-color-gold-bg:         rgba(216, 189, 113, 0.10);
+  --velaro-color-gold-bg-2:       rgba(216, 189, 113, 0.20);
+  --velaro-color-glow:            rgba(216, 189, 113, 0.25);
+  --velaro-color-glow-amber:      rgba(242, 173, 117, 0.25);
+
+  /* ── TYPOGRAPHY ── */
+  --velaro-font-serif:   'Cormorant Garamond', Georgia, serif;
+  --velaro-font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+
+  --velaro-text-xs:      11px;
+  --velaro-text-sm:      13px;
+  --velaro-text-base:    14px;
+  --velaro-text-md:      16px;
+  --velaro-text-lg:      18px;
+  --velaro-text-xl:      24px;
+  --velaro-text-2xl:     32px;
+  --velaro-text-hero:    48px;
+
+  /* ── SPACING ── */
+  --velaro-space-1:      4px;
+  --velaro-space-2:      8px;
+  --velaro-space-3:      12px;
+  --velaro-space-4:      16px;
+  --velaro-space-5:      20px;
+  --velaro-space-6:      24px;
+  --velaro-space-8:      32px;
+  --velaro-space-10:     40px;
+  --velaro-space-12:     48px;
+  --velaro-space-14:     56px;
+  --velaro-space-16:     64px;
+  --velaro-space-section: 60px;
+
+  /* ── BORDER RADIUS ── */
+  --velaro-radius-sm:    4px;
+  --velaro-radius-md:    8px;
+  --velaro-radius-lg:    12px;
+  --velaro-radius-xl:    16px;
+  --velaro-radius-2xl:   20px;
+  --velaro-radius-3xl:   24px;
+  --velaro-radius-pill:  100px;
+
+  /* ── SHADOWS ── */
+  --velaro-shadow-xs:    0 1px 2px rgba(26,43,74,0.06);
+  --velaro-shadow-sm:    0 1px 3px rgba(26,43,74,0.08), 0 1px 2px rgba(26,43,74,0.05);
+  --velaro-shadow-md:    0 4px 12px rgba(26,43,74,0.10), 0 2px 4px rgba(26,43,74,0.05);
+  --velaro-shadow-lg:    0 8px 24px rgba(26,43,74,0.12), 0 4px 8px rgba(26,43,74,0.06);
+  --velaro-shadow-xl:    0 20px 48px rgba(26,43,74,0.14), 0 8px 16px rgba(26,43,74,0.07);
+
+  /* ── TRANSITIONS ── */
+  --velaro-transition:      all 0.2s ease;
+  --velaro-transition-slow: all 0.3s ease;
+
+  /* ── SHORTHAND ALIASES ── */
+  --bg:         var(--velaro-color-bg);
+  --surf-1:     var(--velaro-color-surf-1);
+  --surf-2:     var(--velaro-color-surf-2);
+  --navy:       var(--velaro-color-navy);
+  --gold:       var(--velaro-color-gold);
+  --gold-2:     var(--velaro-color-gold-2);
+  --amber:      var(--velaro-color-amber);
+  --white:      var(--velaro-color-white);
+  --text:       var(--velaro-color-text);
+  --muted:      var(--velaro-color-muted);
+  --border:     var(--velaro-color-border);
+  --glow:       var(--velaro-color-glow);
+  --glow-amber: var(--velaro-color-glow-amber);
+  --r:          var(--velaro-radius-xl);
+}
