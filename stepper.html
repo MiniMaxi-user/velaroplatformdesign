@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velaro Platform — Paard aanmelden</title>
+<link rel="stylesheet" href="src/styles/index.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-icon">V</div>
+      <span class="sidebar-logo-text">VELARO</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Hoofdmenu</div>
+        <a class="nav-item" href="index.html"><span class="nav-icon">⊞</span><span class="nav-label">Dashboard</span></a>
+        <a class="nav-item active" href="#"><span class="nav-icon">🐴</span><span class="nav-label">Paarden</span><span class="nav-badge">24</span></a>
+        <a class="nav-item" href="#"><span class="nav-icon">🏅</span><span class="nav-label">Professionals</span></a>
+        <a class="nav-item" href="#"><span class="nav-icon">🏟</span><span class="nav-label">Stallen</span></a>
+        <a class="nav-item" href="#"><span class="nav-icon">📅</span><span class="nav-label">Evenementen</span></a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Analyse</div>
+        <a class="nav-item" href="#"><span class="nav-icon">📊</span><span class="nav-label">Marktdata</span></a>
+        <a class="nav-item" href="#"><span class="nav-icon">✦</span><span class="nav-label">AI Inzichten</span><span class="nav-badge">3</span></a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Beheer</div>
+        <a class="nav-item" href="#"><span class="nav-icon">⚙</span><span class="nav-label">Instellingen</span></a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user-avatar">MJ</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Martijn Jansen</div>
+        <div class="sidebar-user-role">Platform Beheerder</div>
+      </div>
+      <button class="sidebar-toggle-btn" id="sidebarToggle" title="Sidebar inklappen">◀</button>
+    </div>
+  </aside>
+
+  <!-- ── APP MAIN ── -->
+  <div class="app-main">
+
+    <!-- ── TOPBAR ── -->
+    <header class="topbar">
+      <div class="topbar-search">
+        <span class="topbar-search-icon">🔍</span>
+        <input type="text" placeholder="Zoek paarden, professionals, stallen…">
+      </div>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-actions">
+        <button class="topbar-icon-btn" title="Notificaties">🔔<span class="topbar-notif-dot"></span></button>
+        <button class="topbar-icon-btn" title="Help">?</button>
+        <div class="topbar-divider"></div>
+        <div class="topbar-user">
+          <div class="topbar-user-avatar">MJ</div>
+          <span class="topbar-user-name">Martijn Jansen</span>
+          <span style="font-size:9px;color:var(--muted);margin-left:2px;">▼</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── CONTENT ── -->
+    <div class="content-area">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="page-header-left">
+          <div class="breadcrumb">
+            <a href="index.html">Dashboard</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="#">Paarden</a>
+            <span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current">Paard aanmelden</span>
+          </div>
+          <h1 class="page-title">Paard <em>aanmelden</em></h1>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn-ghost btn-sm">Concept opslaan</button>
+          <button class="btn-secondary btn-sm">Annuleren</button>
+        </div>
+      </div>
+
+      <!-- ── PREMIUM TOTAL PROGRESS HERO (boven de te nemen stappen) ── -->
+      <div class="progress-hero">
+        <div class="progress-hero-top">
+          <div>
+            <div class="progress-hero-eyebrow">Voortgang aanmelding</div>
+            <div class="progress-hero-title">Profiel <em>Florentijn van de Berg</em></div>
+          </div>
+          <div class="progress-hero-pct" id="totalPct">0<span>%</span></div>
+        </div>
+        <div class="progress-hero-bar">
+          <div class="progress-hero-fill" id="totalFill" style="width:0%"></div>
+        </div>
+        <div class="progress-hero-meta">
+          <span><strong id="doneCount">0</strong> van <strong id="stepCount">6</strong> stappen afgerond</span>
+          <span id="totalHint">Vul alle stappen in om je paard te publiceren</span>
+        </div>
+      </div>
+
+      <!-- ── TWEE KOLOMMEN ── -->
+      <div class="stepper-layout">
+
+        <!-- LINKS: de te nemen stappen (content) -->
+        <div class="stepper-content">
+
+          <!-- STAP 1 -->
+          <section class="step-section panel" id="step-1" data-step="1">
+            <div class="panel-header">
+              <div class="step-section-head">
+                <span class="step-section-num">1</span>
+                <div>
+                  <div class="step-section-heading">Basisgegevens</div>
+                  <div class="step-section-sub">Naam, ras en algemene kenmerken</div>
+                </div>
+              </div>
+              <span class="badge" data-status></span>
+            </div>
+            <div class="panel-body">
+              <div class="form-grid">
+                <div class="form-group" data-field>
+                  <label class="form-label">Naam paard <span class="required">*</span></label>
+                  <input class="input" type="text" value="Florentijn van de Berg">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Ras <span class="required">*</span></label>
+                  <select class="input">
+                    <option selected>KWPN</option>
+                    <option>BWP</option>
+                    <option>NRPS</option>
+                    <option>AES</option>
+                  </select>
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Geboortejaar <span class="required">*</span></label>
+                  <input class="input" type="number" value="2016">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Kleur</label>
+                  <input class="input" type="text" value="Donkerbruin">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Geslacht <span class="required">*</span></label>
+                  <select class="input">
+                    <option>Merrie</option>
+                    <option selected>Ruin</option>
+                    <option>Hengst</option>
+                  </select>
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Stokmaat</label>
+                  <div class="input-group">
+                    <input class="input" type="text" value="1,72">
+                    <span class="input-group-suffix">m</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAP 2 -->
+          <section class="step-section panel" id="step-2" data-step="2">
+            <div class="panel-header">
+              <div class="step-section-head">
+                <span class="step-section-num">2</span>
+                <div>
+                  <div class="step-section-heading">Afstamming &amp; Stamboek</div>
+                  <div class="step-section-sub">Herkomst, UELN en registratie</div>
+                </div>
+              </div>
+              <span class="badge" data-status></span>
+            </div>
+            <div class="panel-body">
+              <div class="form-grid">
+                <div class="form-group" data-field>
+                  <label class="form-label">UELN-nummer <span class="required">*</span></label>
+                  <input class="input" type="text" value="528003200012345">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Stamboek</label>
+                  <input class="input" type="text" value="KWPN">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Vader (hengst) <span class="required">*</span></label>
+                  <input class="input" type="text" placeholder="bijv. Negro" value="">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Moeder (merrie) <span class="required">*</span></label>
+                  <input class="input" type="text" placeholder="bijv. Ulrike" value="">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Fokker</label>
+                  <input class="input" type="text" placeholder="Naam fokker" value="">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAP 3 -->
+          <section class="step-section panel" id="step-3" data-step="3">
+            <div class="panel-header">
+              <div class="step-section-head">
+                <span class="step-section-num">3</span>
+                <div>
+                  <div class="step-section-heading">Discipline &amp; Niveau</div>
+                  <div class="step-section-sub">Sport, niveau en training</div>
+                </div>
+              </div>
+              <span class="badge" data-status></span>
+            </div>
+            <div class="panel-body">
+              <div class="form-grid">
+                <div class="form-group" data-field>
+                  <label class="form-label">Discipline <span class="required">*</span></label>
+                  <select class="input">
+                    <option value="" selected>Kies discipline…</option>
+                    <option>Dressuur</option>
+                    <option>Springen</option>
+                    <option>Allround</option>
+                    <option>Eventing</option>
+                  </select>
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Niveau <span class="required">*</span></label>
+                  <select class="input">
+                    <option value="" selected>Kies niveau…</option>
+                    <option>L</option>
+                    <option>M</option>
+                    <option>Z</option>
+                    <option>ZZ</option>
+                    <option>GP</option>
+                  </select>
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Getraind door</label>
+                  <input class="input" type="text" placeholder="Naam professional" value="">
+                </div>
+              </div>
+              <div class="divider-h"></div>
+              <div style="font-size:12px;font-weight:600;color:var(--navy);margin-bottom:10px;">Kenmerken</div>
+              <div class="check-group" data-field>
+                <label class="check-item"><input type="checkbox"> Wedstrijdgeschiedenis aanwezig</label>
+                <label class="check-item"><input type="checkbox"> Geschikt voor amateur</label>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAP 4 -->
+          <section class="step-section panel" id="step-4" data-step="4">
+            <div class="panel-header">
+              <div class="step-section-head">
+                <span class="step-section-num">4</span>
+                <div>
+                  <div class="step-section-heading">Gezondheid &amp; Veterinair</div>
+                  <div class="step-section-sub">Keuringen en medische status</div>
+                </div>
+              </div>
+              <span class="badge" data-status></span>
+            </div>
+            <div class="panel-body">
+              <div class="form-grid">
+                <div class="form-group" data-field>
+                  <label class="form-label">Laatste keuring</label>
+                  <input class="input" type="text" placeholder="dd-mm-jjjj" value="">
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Dierenarts</label>
+                  <input class="input" type="text" placeholder="Naam praktijk" value="">
+                </div>
+              </div>
+              <div class="divider-h"></div>
+              <div style="font-size:12px;font-weight:600;color:var(--navy);margin-bottom:12px;">Veterinaire status</div>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <label class="toggle-switch" data-field><input type="checkbox"><div class="toggle-track"></div>Veterinair goedgekeurd</label>
+                <label class="toggle-switch" data-field><input type="checkbox"><div class="toggle-track"></div>Röntgenfoto's beschikbaar</label>
+                <label class="toggle-switch" data-field><input type="checkbox"><div class="toggle-track"></div>Vrij van medicatie</label>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAP 5 -->
+          <section class="step-section panel" id="step-5" data-step="5">
+            <div class="panel-header">
+              <div class="step-section-head">
+                <span class="step-section-num">5</span>
+                <div>
+                  <div class="step-section-heading">Media &amp; Foto's</div>
+                  <div class="step-section-sub">Beeldmateriaal en video</div>
+                </div>
+              </div>
+              <span class="badge" data-status></span>
+            </div>
+            <div class="panel-body">
+              <div class="form-group" data-field>
+                <label class="form-label">Hoofdfoto URL <span class="required">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-icon">🖼</span>
+                  <input class="input" type="text" placeholder="https://…" value="">
+                </div>
+              </div>
+              <div class="form-group mt-3" data-field>
+                <label class="form-label">Video URL</label>
+                <div class="input-group">
+                  <span class="input-group-icon">▶</span>
+                  <input class="input" type="text" placeholder="https://youtube.com/…" value="">
+                </div>
+                <span class="form-hint">Voeg een wedstrijd- of trainingsvideo toe voor meer interesse.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAP 6 -->
+          <section class="step-section panel" id="step-6" data-step="6">
+            <div class="panel-header">
+              <div class="step-section-head">
+                <span class="step-section-num">6</span>
+                <div>
+                  <div class="step-section-heading">Prijs &amp; Beschikbaarheid</div>
+                  <div class="step-section-sub">Vraagprijs en publicatie</div>
+                </div>
+              </div>
+              <span class="badge" data-status></span>
+            </div>
+            <div class="panel-body">
+              <div class="form-grid">
+                <div class="form-group" data-field>
+                  <label class="form-label">Vraagprijs <span class="required">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-icon">€</span>
+                    <input class="input" type="number" placeholder="45000" value="">
+                    <span class="input-group-suffix">EUR</span>
+                  </div>
+                </div>
+                <div class="form-group" data-field>
+                  <label class="form-label">Status <span class="required">*</span></label>
+                  <select class="input">
+                    <option value="" selected>Kies status…</option>
+                    <option>Beschikbaar</option>
+                    <option>In training</option>
+                    <option>Onder voorbehoud</option>
+                  </select>
+                </div>
+              </div>
+              <div class="divider-h"></div>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <label class="toggle-switch" data-field><input type="checkbox"><div class="toggle-track"></div>Profiel zichtbaar op platform</label>
+                <label class="toggle-switch"><input type="checkbox" checked><div class="toggle-track"></div>AI matchmaking inschakelen</label>
+              </div>
+              <div class="alert alert-info mt-4">
+                <span class="alert-icon">ℹ</span>
+                <div class="alert-body">
+                  <div class="alert-title">Bijna klaar</div>
+                  <div class="alert-text">Zodra alle stappen op 100% staan kun je het profiel publiceren.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /stepper-content -->
+
+        <!-- RECHTS: stappen-checklist (sticky) -->
+        <aside class="stepper-nav" id="stepperNav">
+          <div class="stepper-nav-card">
+            <div class="stepper-nav-title">Stappen <span id="navProgress">0 / 6</span></div>
+            <!-- step items worden hier gegenereerd door JS -->
+            <div id="stepList"></div>
+            <div class="stepper-nav-foot">
+              <button class="btn-primary btn-primary--full" id="publishBtn" disabled style="opacity:.5;cursor:not-allowed;">Publiceren</button>
+              <button class="btn-ghost btn-sm" style="justify-content:center;">Voorbeeld bekijken</button>
+            </div>
+          </div>
+        </aside>
+
+      </div><!-- /stepper-layout -->
+
+    </div><!-- /content-area -->
+  </div><!-- /app-main -->
+</div><!-- /app-shell -->
+
+<script>
+  // ── Sidebar collapse ──
+  document.getElementById('sidebarToggle').addEventListener('click', () => {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+    document.getElementById('sidebarToggle').textContent = sidebar.classList.contains('collapsed') ? '▶' : '◀';
+  });
+
+  // ── Stepper logic ──
+  const sections = Array.from(document.querySelectorAll('.step-section'));
+  const stepList = document.getElementById('stepList');
+  const scroller = document.querySelector('.content-area');
+
+  // Bouw de checklist rechts op basis van de secties links
+  const items = sections.map(sec => {
+    const num   = sec.dataset.step;
+    const name  = sec.querySelector('.step-section-heading').textContent;
+    const sub   = sec.querySelector('.step-section-sub').textContent;
+
+    const item = document.createElement('div');
+    item.className = 'step-item';
+    item.dataset.target = sec.id;
+    item.innerHTML =
+      '<div class="step-indicator">' + num + '</div>' +
+      '<div class="step-item-body">' +
+        '<div class="step-item-title">' +
+          '<span class="step-item-name">' + name + '</span>' +
+          '<span class="step-item-pct">0%</span>' +
+        '</div>' +
+        '<div class="step-item-sub">' + sub + '</div>' +
+        '<div class="step-progress"><div class="step-progress-fill"></div></div>' +
+      '</div>';
+
+    // Klik → scroll naar het juiste onderdeel links
+    item.addEventListener('click', () => {
+      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    stepList.appendChild(item);
+    return { sec, item,
+      fill: item.querySelector('.step-progress-fill'),
+      pct:  item.querySelector('.step-item-pct'),
+      indicator: item.querySelector('.step-indicator'),
+      badge: sec.querySelector('[data-status]') };
+  });
+
+  // Bereken percentage per stap o.b.v. ingevulde velden
+  function stepProgress(sec) {
+    const fields = sec.querySelectorAll('[data-field]');
+    let filled = 0;
+    fields.forEach(f => {
+      const controls = f.querySelectorAll('input, select, textarea');
+      let done = false;
+      controls.forEach(c => {
+        if (c.type === 'checkbox' || c.type === 'radio') { if (c.checked) done = true; }
+        else if (c.value && c.value.trim() !== '') done = true;
+      });
+      if (done) filled++;
+    });
+    return { filled, total: fields.length };
+  }
+
+  function recalc() {
+    let grandFilled = 0, grandTotal = 0, doneSteps = 0;
+
+    items.forEach(({ sec, fill, pct, indicator, badge }, i) => {
+      const { filled, total } = stepProgress(sec);
+      const p = total ? Math.round(filled / total * 100) : 0;
+      grandFilled += filled; grandTotal += total;
+
+      fill.style.width = p + '%';
+      pct.textContent = p + '%';
+
+      const complete = p === 100;
+      const started  = p > 0;
+      if (complete) doneSteps++;
+
+      // Kleurstatus per stap (compleet / bezig / open)
+      items[i].item.classList.toggle('is-complete', complete);
+      sec.classList.toggle('is-complete', complete);
+      indicator.innerHTML = complete ? '✓' : sec.dataset.step;
+
+      badge.className = 'badge ' + (complete ? 'badge-success badge-dot' : started ? 'badge-warning badge-dot' : 'badge-neutral badge-dot');
+      badge.textContent = complete ? 'Compleet' : started ? 'Bezig' : 'Nog te doen';
+    });
+
+    // Totaal
+    const totalPct = grandTotal ? Math.round(grandFilled / grandTotal * 100) : 0;
+    document.getElementById('totalFill').style.width = totalPct + '%';
+    document.getElementById('totalPct').innerHTML = totalPct + '<span>%</span>';
+    document.getElementById('doneCount').textContent = doneSteps;
+    document.getElementById('navProgress').textContent = doneSteps + ' / ' + items.length;
+
+    const hint = document.getElementById('totalHint');
+    const publishBtn = document.getElementById('publishBtn');
+    if (totalPct === 100) {
+      hint.textContent = 'Alles ingevuld — klaar om te publiceren ✦';
+      publishBtn.disabled = false;
+      publishBtn.style.opacity = '1';
+      publishBtn.style.cursor = 'pointer';
+    } else {
+      hint.textContent = 'Vul alle stappen in om je paard te publiceren';
+      publishBtn.disabled = true;
+      publishBtn.style.opacity = '.5';
+      publishBtn.style.cursor = 'not-allowed';
+    }
+  }
+
+  // Live updaten bij invullen
+  document.querySelectorAll('.stepper-content input, .stepper-content select, .stepper-content textarea')
+    .forEach(el => { el.addEventListener('input', recalc); el.addEventListener('change', recalc); });
+
+  // ── Scrollspy: markeer de actieve stap rechts ──
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        items.forEach(({ item }) => item.classList.toggle('is-active', item.dataset.target === id));
+      }
+    });
+  }, { root: scroller, rootMargin: '-10% 0px -60% 0px', threshold: 0 });
+  sections.forEach(s => spy.observe(s));
+
+  // Init
+  recalc();
+  if (items[0]) items[0].item.classList.add('is-active');
+</script>
+</body>
+</html>
